@@ -1,0 +1,5 @@
+.pants.d/
+.pants.run
+*.pyc
+build-support/pants.venv/
+build-support/virtualenv-*
