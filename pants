@@ -4,6 +4,6 @@ PIP_OPTIONS=(
   --allow-external elementtree
   --allow-unverified elementtree
 )
-setup_virtualenv pants pantsbuild.pants==0.0.24 ${PIP_OPTIONS[@]}
+setup_virtualenv pants pantsbuild.pants==0.0.27 ${PIP_OPTIONS[@]}
 
 exec pants "$@"
