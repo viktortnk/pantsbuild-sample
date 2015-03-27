@@ -16,17 +16,17 @@ make_lib('com.typesafe.zinc', 'zinc', '0.3.7')
 
 jar_library(name = 'scala-compiler',
             jars = [
-              jar(org = 'org.scala-lang', name = 'scala-compiler', rev = '2.10.4'),
+              jar(org = 'org.scala-lang', name = 'scala-compiler', rev = '2.11.6'),
             ])
 
 jar_library(name = 'scala-library',
             jars = [
-              jar(org = 'org.scala-lang', name = 'scala-library', rev = '2.10.4'),
+              jar(org = 'org.scala-lang', name = 'scala-library', rev = '2.11.6'),
             ])
 
 jar_library(name = 'scala-repl',
             jars = [
-              jar(org = 'org.scala-lang', name = 'jline', rev = '2.10.4', intransitive = True),
+              jar(org = 'org.scala-lang', name = 'jline', rev = '2.11.6', intransitive = True),
             ],
             dependencies = [
               ':scala-compiler',
