@@ -9,10 +9,20 @@ make_lib('xalan', 'xalan', '2.7.1')
 
 # JavaCompile
 make_lib('org.pantsbuild', 'jmake', '1.3.8-10')
-make_lib('com.twitter.common.tools', 'java-compiler', '0.0.17')
+make_lib('org.pantsbuild.tools.compiler', 'java-compiler', '0.0.1')
 
 # ScalaCompile
-make_lib('com.typesafe.zinc', 'zinc', '0.3.7')
+make_lib('org.pantsbuild', 'zinc', '1.0.6')
+
+# We just want the single compiler-interface and sbt-interface jars and not their deps on
+# scala-lang.
+jar_library(
+  name='compiler-interface',
+  jars=[
+    jar('com.typesafe.sbt', 'compiler-interface', '0.13.8', classifier='sources', intransitive=True)
+  ]
+)
+make_lib('com.typesafe.sbt', 'sbt-interface', '0.13.8', intransitive=True)
 
 jar_library(name = 'scala-compiler',
             jars = [
@@ -34,12 +44,7 @@ jar_library(name = 'scala-repl',
             ])
 
 # JunitRun
-make_lib('com.twitter.common', name='junit-runner', rev='0.0.41', lib_name='junit',
-  deps=[
-    '3rdparty/jvm/junit',
-    '3rdparty/jvm/org/hamcrest:hamcrest-core',
-  ]
-)
+make_lib('org.pantsbuild', 'junit-runner', '0.0.5', lib_name='junit')
 make_lib('emma', 'emma', '2.1.5320')
 
 jar_library(name = 'scalastyle',
@@ -47,4 +52,7 @@ jar_library(name = 'scalastyle',
               jar(org='org.scalastyle', name='scalastyle_2.10', rev='0.5.0')
             ])
 
-make_lib('com.twitter.common', 'jar-tool', '0.1.7')
+make_lib('org.pantsbuild', 'jar-tool', '0.0.5')
+
+# Tool Auto-shading
+make_lib('org.pantsbuild.jarjar', 'jarjar', '1.5')
