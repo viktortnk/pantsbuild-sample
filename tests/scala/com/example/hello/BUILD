@@ -1,0 +1,9 @@
+junit_tests(
+  name='hello',
+  dependencies=[
+    'src/scala/com/example/hello:hello',
+    '3rdparty:junit',
+    '3rdparty:scalatest',
+  ],
+  sources=globs('*.scala'),
+)
