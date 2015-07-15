@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 source build-support/python/libvirtualenv.sh
 
 PANTS_VERSION=0.0.35
