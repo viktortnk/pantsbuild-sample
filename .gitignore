@@ -1,7 +1,5 @@
 .pants.d/
+.pids/
 .pants.run
 *.pyc
-build-support/pants.venv/
-build-support/virtualenv-*.tar.gz
-build-support/virtualenv.dist/
 .idea/
