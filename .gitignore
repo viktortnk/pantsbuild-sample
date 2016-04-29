@@ -1,5 +1,7 @@
 .pants.d/
+.cache/
 .pids/
 .pants.run
+.pants.workdir.file_lock
 *.pyc
 .idea/
