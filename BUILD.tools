@@ -12,7 +12,7 @@ jar_library(name = 'scala-library',
 
 jar_library(name = 'scala-repl',
             jars = [
-              jar(org = 'org.scala-lang', name = 'jline', rev = SCALA_REV, intransitive = True),
+              jar(org = 'jline', name = 'jline', rev = '2.14.1', intransitive = True),
             ],
             dependencies = [
               ':scalac_2_11',
